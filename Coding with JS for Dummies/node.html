@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>The HTML Family</title>
+    </head>
+    <body>
+        <section>
+            <!--proud parent of 3 p elemens, child of body-->
+            <p>First</p>
+            <!--1st child of setion element, sibling of 2 p elements-->
+            <p>Second</p>
+            <!--2nd child of setion element, sibling of 2 p elements-->
+            <p>Third</p>
+            <!--3rd child of setion element, sibling of 2 p elements-->
+        </section>
+        <h1>Nodes in the section element</h1>
+        <script>
+        var myNodelist = document.body.childNodes[1].childNodes;
+        for (i = 0; i < myNodelist.length; i++) {
+            document.write(myNodelist[i] + "<br>");
+        }
+        </script>
+    </body>
+</html>

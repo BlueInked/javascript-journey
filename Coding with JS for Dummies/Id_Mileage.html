@@ -1,0 +1,23 @@
+<!DOCTYPE>
+<html>
+    <head>
+    <title>Using getElementById</title>
+    <script>
+        function calculateMPG(miles, gallons){
+            document.getElementById("displayMiles").innerHTML = parseInt(miles);
+            document.getElementById("displayGallons").innerHTML = parseInt(gallons);
+            document.getElementById("displayMPG").innerHTML = miles/gallons;
+        }
+    </script>
+    </head>
+    <body>
+        <p>You drove <span id="displayMiles">---</span> miles.</p>
+        <p>You used <span id="displayGallons">---</span> gallons of gas.</p>
+        <p>Your MPG is <span id="displayMPG">---</span></p>
+        <script>
+        var milesDriven = prompt("Enter miles driven:");
+        var gallonsGas = prompt("Enter the gallons of gas used:");
+            calculateMPG(milesDriven, gallonsGas);
+        </script>
+    </body>
+</html>

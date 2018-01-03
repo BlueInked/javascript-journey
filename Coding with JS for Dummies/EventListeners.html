@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Counting App2</title>
+        <script>
+        //wait until the window is loaded before registering the onclick 
+            window.addEventListener("load", registerEvents, false);
+        //create a global counting variable
+            var theCount = 0;
+        /**
+        Register onclick events
+        */
+            function registerEvents(e){
+                document.getElementById("incrementButton").addEventListener('click', increaseCount, false);
+                document.getElementById("incrementButton").addEventListener('click', changeSize, false);
+            }
+        /**
+        Increments theCount and displays result.
+        */
+            function increaseCount(e){
+                theCount++;
+                document.getElementById("currentCount").innerHTML = theCount;
+            }
+        /**
+        Change the font size of the count text
+        */
+            function changeSize(e){
+                document.getElementById("currentCount").style.fontSize = theCount;
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Click the Button to Count.</h1>
+        <p>Current Number: <span id="currentCount">0</span></p>
+        <button id="incrementButton">Increase</button>
+    </body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Generating a List</title>
+    </head>
+    <body>
+        <h1>Here Are Some Types of Beers:</h1>
+        <ul id="beerList">
+        </ul>
+        <script>
+        var typeOfBeer = ["Ale", "Porter", "Stout", "Hefeweizen", "IPA"];
+        for (i = 0; i < typeOfBeer.length; i++) {
+            var listElement = document.createElement("li");
+            listElement.innerHTML = typeOfBeer[i];
+            document.getElementById("beerList").appendChild(listElement);
+        }
+        </script>
+    </body>
+</html>

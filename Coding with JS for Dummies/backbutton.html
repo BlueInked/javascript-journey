@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Creating a Back Button</title>
+        <script>
+        function takeMeBack(){
+            window.location(window.history.go(-1));
+        }
+        function getHistoryLength() {
+            var l = window.history.length;
+            return l;
+        }
+        </script>
+    </head>
+    <body>
+        <script>
+        var historyLength = getHistoryLength();
+            document.write ("<p>Welcome! The number of pages you've visited in this window is:" +historyLength+ "</p>");
+        </script>
+        <br>
+        <a href="javascript:void(0);" onclick="takeMeBack();">Go Back</a>
+    </body>
+</html>

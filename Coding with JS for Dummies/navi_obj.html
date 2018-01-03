@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Navigator Values</title>
+        <style>
+            .columns {
+                -webkit-column-count: 6; /*Chrome, Safari, Opera*/
+                -moz-column-count: 6; /*Firefox*/
+                column-count: 6;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="columns">
+            <script>
+            for (var prop in navigator){
+                document.write(prop + ":" +navigator[prop]+ "<br>");
+            }
+            </script>
+        </div>
+    </body>
+</html>
