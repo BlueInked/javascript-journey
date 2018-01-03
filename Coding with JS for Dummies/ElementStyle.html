@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Getting Computed Styles</title>
+        <style>
+            #myText {
+                color: white;
+                background-color: black;
+                font-family: Arial;
+                margin-bottom: 20px;
+            }
+            #stylesOutput {
+                font-size: 18px;
+                font-family: monospace;
+            }
+        </style>
+        <script>
+        function getElementStyles(e){
+            var computedColor = 
+                window.getComputedStyle(e.target).getPropertyValue("color");
+            var computedSize =
+                window.getComputedStyle(e.target).getPropertyValue("font-size");
+            var colorOutput = "color:" + computedColor;
+            var fontSizeOutput = "font size:" + computedSize;
+            document.getElementById("stylesOutput").innerHTML = colorOutput + "<br>" + fontSizeOutput;
+        }
+        </script>
+    </head>
+    <body>
+        <div id="myText" style="font-size: 26px;" onclick="getElementStyles(event);">Here is Some Text</div>
+        <div id="stylesOutput"></div>
+    </body>
+</html>

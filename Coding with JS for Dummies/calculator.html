@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Math Fun!</title>
+        <script>
+        function registerEvents(){
+            document.mathWiz.operate.addEventListener('click', doTheMath, false);      
+        }
+        function doTheMath(){
+            var first = parseInt(document.mathWiz.numberOne.value);
+            var second = parseInt(document.mathWiz.numberTwo.value);
+            var operator = document.mathWiz.operator.value;
+            switch (operator) {
+                case "add":
+                    var answer = first + second;
+                    break;
+                case "subtract":
+                    var answer = first - second;
+                    break;
+                case "multiply":
+                    var answer = first * second;
+                    break;
+                case "divide":
+                    var answer = first / second;
+                    break;
+            }
+            document.mathWiz.theResult.value =  answer;
+        }
+        </script>
+    </head>
+    <body onload="registerEvents();">
+       <form name="mathWiz">
+           <label>First Number: <input type="number" name="numberOne"></label><br>
+           <label>Second Number: <input type="number" name="numberTwo"></label><br>
+           <label>Operator:
+           <select name="operator">
+               <option value="add"> + </option>
+               <option value="subtract"> - </option>
+               <option value="multiply"> * </option>
+               <option value="divide"> / </option>
+           </select>
+           </label>
+           <br>
+           <input type="button" name="operate" value="Do the Math!"><br>
+           <label>Result: <input type="number" name="theResult"></label>
+       </form>
+    </body>
+</html>

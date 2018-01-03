@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Subscribe to Our Newsletter 2</title>
+        <script>
+        function setFormDefaults(){
+            document.forms.subscribeForm.method = "post";
+            document.forms.subscribeForm.target = "_blank";
+            document.forms.subscribeForm.action = "http://watzthis.us9.list-manage.com/subscribe/post?u=1e6d8741f7db587af747ec056&amp;id=663906e3ba";
+            
+        //register the button events
+            document.getElementById('btnSubscribe').addEventListener('click', submitForm);
+            document.getElementById('btnReset').addEventListener('click', resetForm);
+        }
+        function submitForm(){
+            document.forms.subscribeForm.submit();
+        }
+        function resetForm(){
+            document.forms.subsribeForm.reset();
+        }
+        </script>
+    </head>
+    <body onload="setFormDefaults();">
+       <form name="subscribeForm">
+           <h2>Subscribe to Our Mailing List</h2>
+           <label for="mce-EMAIL">Email Address</label>
+           <input type="email" value="" name="EMAIL" id="mce=EMAIL">
+           <button type="button" id="btnSubscribe">Subscribe!</button>
+           <button type="button" id="btnReset">Reset</button>
+       </form>
+    </body>
+</html>
