@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Javascript SlideShow</title>
+        <style>
+            #carousel {
+                position: absolute;
+                width: 800px;
+                height: 400px;
+                top: 100px;
+                left: 100px;
+                display: hidden;
+            }
+        </style>
+        <script>
+        var slides = [
+            "<div id='slide1>'My First Slide<br><img src='david-talley-368220.jpg'></div>",
+            "<div id='slide2'>My Second Slide<br><img src='bryan-minear-357755.jpg'></div>",
+            "<div id='slide3'>My Third Slide<br><img src='cassie-boca-296277.jpg'></div>",
+            "<div id='slide4'>My Fourth Slide<br><img src='cody-davis-259003.jpg'></div>",
+            "<div id='slide5'>My Fifth Slide<br><img src='dardan-mu-273603.jpg'></div>"
+        ];
+        var currentSlide = 0;
+        var numberOfSlides = slides.length-1;
+        window.addEventListener("load", loader, false);
+        function loader() {
+            changeImage();
+        }
+        function changeImage() {
+            console.log("changeImage function");
+            if (currentSlide > numberOfSlides) {
+                currentSlide = 0;
+            }
+            document.getElementById("carousel").innerHTML = slides[currentSlide];
+            console.log('displaying slide' + currentSlide + "of" + numberOfSlides);
+            currentSlide++;
+            setTimeout(changeImage, 5000);
+        }
+        </script>
+    </head>
+    <body>
+        <div id="carousel"></div>
+    </body>
+</html>

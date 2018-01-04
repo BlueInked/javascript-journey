@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Javascript Animation</title>
+        <style>
+            #square {
+                width: 100px;
+                height: 100px;
+                background-color: #333;
+                position: absolute;
+                left: 0px;
+                top: 100px;
+            }
+        </style>
+        <script>
+        //wait until the winndow is loaded
+            window.addEventListener("load", initialize, false);
+            function initialize() {
+                //move the square when clicked
+                document.getElementById("square").addEventListener('click', function(e) {
+                    //get the starting position
+                    var left = window.getComputedStyle(e.target).getPropertyValue("left");
+                    //convert left to a base 10 number
+                    left = parseInt(left, 10);
+                    moveSquare(left, 100);
+                }, false);
+            }
+            function moveSquare(left, numMoves) {
+                document.getElementById("square").style.left = left + "px";
+                if (numMoves > 0) {
+                    numMoves--;
+                    left++;
+                    setTimeout(moveSquare, 10, left, numMoves);
+                } else {
+                    return;
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <div id="square"></div>
+    </body>
+</html>
