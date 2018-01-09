@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Introducing doMath Function</title>
+        <script>
+        function doMath(number1, number2, callback) {
+            var result = callback(number1, number2);
+            document.getElementById("theResult").innerHTML += ("The result is: " + result + "<br>");
+        }
+        document.addEventListener('DOMContentLoaded', function() {
+            doMath(5,2, function(number1, number2) {
+                var calculation = number1 * number2;
+                return calculation;
+            });
+            doMath(10,3, function(number1, number2) {
+                var calculation = number1 / number2;
+                return calculation;
+            });
+            doMath(81,9, function(number1, number2) {
+                var calculation = number1 % number2;
+                return calculation;
+            });
+        }, false);
+        </script>
+    </head>
+    <body>
+        <h1>Do the Math</h1>
+        <div id="theResult"></div>
+    </body>
+</html>
