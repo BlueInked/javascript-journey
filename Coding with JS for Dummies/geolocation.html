@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>The Position Object</title>
+        <script>
+        var gps = navigator.geolocation.getCurrentPosition(
+        function (position) {
+            for (key in position.coords) {
+                document.write(key+':'+position.coords[key]);
+                document.write('<br>');
+            }
+        });
+        </script>
+    </head>
+    <body>
+    </body>
+</html>
