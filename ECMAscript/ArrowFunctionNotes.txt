@@ -1,0 +1,5 @@
+1. no this, super,arguments binding
+2. Can't be called New
+3. No prototype
+4. No duplicate name parameters
+5. No arguments object
