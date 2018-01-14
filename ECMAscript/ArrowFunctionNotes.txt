@@ -3,3 +3,7 @@
 3. No prototype
 4. No duplicate name parameters
 5. No arguments object
+
+Let something = here => value;
+Let adding = (num1,num2) => num1 + num2;
+Let nothing = () => {};
